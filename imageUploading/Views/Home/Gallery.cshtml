@@ -1,0 +1,160 @@
+﻿@model imageUploading.Models.Gallery
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0px;
+            right: 10px;
+        }
+
+        .section-title {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            .info-row div {
+                width: 48%;
+            }
+
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .skills ul li {
+                background: #007bff;
+                color: #fff;
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 4px;
+                transition: background 0.3s;
+            }
+
+                .skills ul li:hover {
+                    background: #0056b3;
+                }
+
+        .hobbies ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .hobbies ul li {
+                background: #4CAF50; 
+                color: #fff;
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 4px;
+                transition: background 0.3s;
+            }
+
+                .hobbies ul li:hover {
+                    background: #45A049; 
+                }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header position-relative">
+            <h1 class="display-4">CV Resume</h1>
+            <img src="~/@Url.Content(Model.image)" alt="uploaded Image" class="profile-image" />
+        </div>
+
+        <div class="info-row">
+            <div>
+                <h2 class="section-title">Personal Information</h2>
+                <p><strong>Name:</strong> @Model.name</p>
+                <p><strong>Name:</strong> @Model.FamilyName</p>
+                <p><strong>Name:</strong> @Model.EmailAddress</p>
+                <p><strong>Name:</strong> @Model.HomeAddress</p>
+                <p><strong>Summary:</strong><br /> @Model.Summary</p>
+            </div>
+            <div>
+                <h2 class="section-title">Experience & Education</h2>
+                <p><strong>Experience:</strong><br /> @Model.Experience</p>
+                <p><strong>Education:</strong><br /> @Model.Education</p>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="section-title">Certificate</h2>
+            <p>@Model.Certificate</p>
+        </div>
+        <div class="info-row">
+        @if (ViewBag.SelectedSkills != null)
+        {
+            <div class="skills">
+                <h2 class="section-title">Selected Skills</h2>
+                <ul class="col-md-6">
+                    @foreach (var skill in ViewBag.SelectedSkills)
+                    {
+                        <li>@skill</li>
+                    }
+                </ul>
+            </div>
+        }
+
+        @if (ViewBag.SelectedHobbies != null)
+        {
+            <div class="hobbies">
+                <h2 class="section-title">Selected Hobbies</h2>
+                <ul class="col-md-6">
+                    @foreach (var hobbies in ViewBag.SelectedHobbies)
+                    {
+                        <li>@hobbies</li>
+                    }
+                </ul>
+            </div>
+        }
+        </div>
+    </div>
+
+</body>
+</html>

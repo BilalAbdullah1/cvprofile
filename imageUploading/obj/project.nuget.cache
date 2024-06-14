@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "fv6qbKy8+KowquUn5HN/wdECpT8VHo2ZeoE6WQp9WZVzPHHjcuNR2lgDYmnyq6P7O6lRBxY+GR25DYmMBjYjiQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bilal.zaheer\\Downloads\\imageUploading\\imageUploading\\imageUploading\\imageUploading.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://137.59.226.222:8023/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

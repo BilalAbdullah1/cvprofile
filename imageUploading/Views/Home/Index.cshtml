@@ -1,0 +1,200 @@
+﻿@model imageUploading.Models.Gallery
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">CV Resume</h1>
+    <br />
+    <form asp-action="Index" enctype="multipart/form-data">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <p>
+                        <label asp-for="@Model.name" class="form-label"></label>
+                        <input asp-for="@Model.name" class="form-control" />
+                        <span asp-validation-for="@Model.name" class="text-danger"></span>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p>
+                        <label asp-for="@Model.Summary" class="form-label"></label><br>
+                        <textarea asp-for="@Model.Summary" class="form-control" rows="1" cols="50"></textarea>
+                        <span asp-validation-for="@Model.Summary" class="text-danger"></span>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p>
+                        <label asp-for="@Model.FamilyName" class="form-label"></label>
+                        <input asp-for="@Model.FamilyName" class="form-control" />
+                        <span asp-validation-for="@Model.FamilyName" class="text-danger"></span>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p>
+                        <label asp-for="@Model.EmailAddress" class="form-label"></label>
+                        <input asp-for="@Model.EmailAddress" class="form-control" />
+                        <span asp-validation-for="@Model.EmailAddress" class="text-danger"></span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        <label asp-for="@Model.Experience" class="form-label"></label>
+                        <select asp-for="@Model.Experience" class="form-control">
+                            <option value="">Select...</option>
+                            <option value="0-1 years">0-1 years</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5-10 years">5-10 years</option>
+                            <option value="10+ years">10+ years</option>
+                        </select>
+                        <span asp-validation-for="@Model.Experience" class="text-danger"></span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <label asp-for="@Model.Education" class="form-label"></label><br>
+                        <textarea asp-for="@Model.Education" class="form-control" rows="1" cols="50"></textarea>
+                        <span asp-validation-for="@Model.Education" class="text-danger"></span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <label asp-for="@Model.HomeAddress" class="form-label"></label><br>
+                        <textarea asp-for="@Model.HomeAddress" class="form-control" rows="1" cols="50"></textarea>
+                        <span asp-validation-for="@Model.HomeAddress" class="text-danger"></span>
+                    </p>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="form-label">Select your hobbies:</label>
+                    <div class="row">
+                        <div class="form-check col-md-3">
+                            <input asp-for="Reading" class="form-check-input" type="checkbox" id="reading">
+                            <label class="form-check-label" for="reading">Reading</label>
+                        </div>
+                        <div class="form-check col-md-3">
+                            <input asp-for="Sports" class="form-check-input" type="checkbox" id="sports">
+                            <label class="form-check-label" for="sports">Sports</label>
+                        </div>
+                        <div class="form-check col-md-3">
+                            <input asp-for="Music" class="form-check-input" type="checkbox" id="music">
+                            <label class="form-check-label" for="music">Music</label>
+                        </div>
+                        <div class="form-check col-md-3">
+                            <input asp-for="Travel" class="form-check-input" type="checkbox" id="travel">
+                            <label class="form-check-label" for="travel">Travel</label>
+                        </div>
+                        <div class="form-check col-md-3">
+                            <input asp-for="Cooking" class="form-check-input" type="checkbox" id="cooking">
+                            <label class="form-check-label" for="cooking">Cooking</label>
+                        </div>
+                        <div class="form-check col-md-3">
+                            <input asp-for="Gaming" class="form-check-input" type="checkbox" id="gaming">
+                            <label class="form-check-label" for="gaming">Gaming</label>
+                        </div>
+                        <div class="form-check col-md-3">
+                            <input asp-for="Photography" class="form-check-input" type="checkbox" id="photography">
+                            <label class="form-check-label" for="photography">Photography</label>
+                        </div>
+                        <div class="form-check col-md-3">
+                            <input asp-for="Painting" class="form-check-input" type="checkbox" id="painting">
+                            <label class="form-check-label" for="painting">Painting</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label">Select your skills:</label>
+                    <div class="row">
+                        <div class="form-check col-md-2">
+                            <input asp-for="HTML" class="form-check-input" type="checkbox" id="html">
+                            <label class="form-check-label" for="html">HTML</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="CSS" class="form-check-input" type="checkbox" id="css">
+                            <label class="form-check-label" for="css">CSS</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="JavaScript" class="form-check-input" type="checkbox" id="javascript">
+                            <label class="form-check-label" for="javascript">JavaScript</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="Python" class="form-check-input" type="checkbox" id="python">
+                            <label class="form-check-label" for="python">Python</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="React" class="form-check-input" type="checkbox" id="react">
+                            <label class="form-check-label" for="react">React</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="Nodejs" class="form-check-input" type="checkbox" id="nodejs">
+                            <label class="form-check-label" for="nodejs">Node.js</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="Angular" class="form-check-input" type="checkbox" id="angular">
+                            <label class="form-check-label" for="angular">Angular</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="Java" class="form-check-input" type="checkbox" id="java">
+                            <label class="form-check-label" for="java">Java</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="Csharp" class="form-check-input" type="checkbox" id="csharp">
+                            <label class="form-check-label" for="csharp">C#</label>
+                        </div>
+                        <div class="form-check col-md-2">
+                            <input asp-for="PHP" class="form-check-input" type="checkbox" id="php">
+                            <label class="form-check-label" for="php">PHP</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="@Model.Certificate" class="form-label"></label>
+
+                    <select asp-for="@Model.Certificate" class="form-control">
+
+                        <option value="">Select...</option>
+                        <option value="HTML Developer Certification">HTML Developer Certification</option>
+                        <option value="CSS Developer Certification">CSS Developer Certification</option>
+                        <option value="JavaScript Developer Certification">JavaScript Developer Certification</option>
+                        <option value="Python Developer Certification">Python Developer Certification</option>
+                        <option value="React Developer Certification">React Developer Certification</option>
+                        <option value="Node.js Developer Certification">Node.js Developer Certification</option>
+                        <option value="Angular Developer Certification">Angular Developer Certification</option>
+                        <option value="Java Developer Certification">Java Developer Certification</option>
+                        <option value="C# Developer Certification">C# Developer Certification</option>
+                        <option value="PHP Developer Certification">PHP Developer Certification</option>
+                    </select>
+                    <span asp-validation-for="@Model.Certificate" class="text-danger"></span>
+
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <label asp-for="@Model.image" class="form-label"></label>
+                        <input type="file" name="img" class="form-control" />
+                        <span asp-validation-for="@Model.image" class="text-danger"></span>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <p>
+                        <input type="submit" value="Save" class="btn btn-primary form-control" />
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
